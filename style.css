@@ -21,6 +21,8 @@ body {
     display: block;
     margin: 0 auto;
     border: none; /* Aucune bordure */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Ombre autour de la photo */
+
 }
 
 
@@ -67,6 +69,8 @@ nav ul li a:hover {
 }
 
 /* Header */
+
+
 header {
     background-color: #bfbfbf;
     color: white;
@@ -94,21 +98,22 @@ header {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Ombre pour le bloc gauche */
 }
 
-/* Bloc gauche */
 .header-left {
-    background-color: #2e2e2e; /* Fond gris plus foncé pour la section gauche */
+    flex: 2; /* La partie gauche occupera 2 fois plus d'espace que la partie droite */
+    background-color: #797979; /* Fond gris plus foncé pour la section gauche */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-/* Bloc droit (photo) */
 .header-right {
-    background-color: transparent; /* Suppression du fond de la section droite */
-    box-shadow: none; /* Supprime l'ombre pour le bloc droit */
-    border-radius: 0; /* Supprime les bords arrondis pour la section droite */
+    flex: 1; /* La partie droite occupera moins d'espace */
+    background-color: transparent; /* Supprime le fond de la section droite */
+    box-shadow: none; /* Supprime l'ombre */
+    border-radius: 0; /* Supprime les bords arrondis */
     padding: 0; /* Supprime le padding pour que la photo prenne toute la place */
 }
+
 
 /* Photo dans le header */
 .profile-photo {
