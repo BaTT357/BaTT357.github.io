@@ -8,21 +8,31 @@
 body {
     font-family: 'Poiret One', sans-serif;
     line-height: 1.6;
-    background-color: #1a1a1a; /* Fond noir */
+    background-color: #d8d8d8; /* Fond noir */
     color: #e0e0e0; /* Texte gris clair */
 }
 
-/* Container */
-.container {
-    width: 80%;
+.profile-photo {
+    width: 100%; /* Laisse l'image prendre toute la largeur de la div */
+    max-width: 550px; /* Taille maximale en largeur pour limiter la taille de l'image */
+    height: auto; /* Ajuste la hauteur en fonction de la largeur */
+    object-fit: cover; /* Remplit la div sans déformation */
+    border-radius: 15px; /* Bords arrondis pour la photo */
+    display: block;
     margin: 0 auto;
-    padding: 20px 0;
+    border: none; /* Aucune bordure */
+}
+
+
+.container {
+    width: 95%; /* Augmente la largeur du conteneur */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    padding: 0; /* Supprime le padding pour que les blocs soient plus proches des bords */
 }
 
 /* Navigation */
 nav {
     display: flex;
-    text-align: center;
     justify-content: space-between;
     align-items: center;
     background-color: #1a1a1a; /* Fond noir pour la nav */
@@ -58,25 +68,54 @@ nav ul li a:hover {
 
 /* Header */
 header {
-    background-color: #1a1a1a;
+    background-color: #bfbfbf;
     color: white;
-    padding: 200px 0;
+    padding: 150px 0;
     text-align: center;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Assure que les deux sections aient la même hauteur */
+    padding: 20px;
+    gap: 20px; /* Espace entre les deux sections */
 }
 
-header p {
-    font-size: 1.2rem;
-    color: #aaa; /* Texte gris */
+.header-left, .header-right {
+    color: #fff; /* Texte blanc pour un meilleur contraste */
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrer le contenu verticalement */
+    align-items: center; /* Centrer le contenu horizontalement */
+    border-radius: 25px; /* Bords arrondis pour le bloc gauche */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Ombre pour le bloc gauche */
 }
 
-.highlight {
-    font-weight: 600;
-    color: #fff; /* Texte blanc pour le nom */
+/* Bloc gauche */
+.header-left {
+    background-color: #2e2e2e; /* Fond gris plus foncé pour la section gauche */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Bloc droit (photo) */
+.header-right {
+    background-color: transparent; /* Suppression du fond de la section droite */
+    box-shadow: none; /* Supprime l'ombre pour le bloc droit */
+    border-radius: 0; /* Supprime les bords arrondis pour la section droite */
+    padding: 0; /* Supprime le padding pour que la photo prenne toute la place */
+}
+
+/* Photo dans le header */
+.profile-photo {
+    width: auto;
+    height: 100%; /* Prend toute la hauteur disponible de la div */
+    object-fit: cover; /* Remplit la div sans déformation */
+    border-radius: 15px; /* Bords arrondis pour la photo */
 }
 
 /* Boutons dans le header */
@@ -94,7 +133,6 @@ header p {
     margin: 0 10px;
 }
 
-/* Bouton principal */
 .header-buttons .btn {
     background-color: #333; /* Bouton gris foncé */
     color: #fff; /* Texte blanc */
@@ -106,7 +144,6 @@ header p {
     color: #fff; /* Texte blanc */
 }
 
-/* Bouton secondaire */
 .header-buttons .btn-secondary {
     background-color: transparent;
     color: #fff; /* Texte blanc */
@@ -117,6 +154,7 @@ header p {
     background-color: #fff; /* Fond blanc au survol */
     color: #1a1a1a; /* Texte noir au survol */
 }
+
 
 /* Section Titles */
 section h2 {
@@ -239,5 +277,18 @@ footer p {
     .content-left, .content-right {
         width: 100%;
         margin-bottom: 20px;
+    }
+
+    .header-content {
+        flex-direction: column;
+    }
+
+    .header-left, .header-right {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .header-right img {
+        max-width: 80%;
     }
 }
