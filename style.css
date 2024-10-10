@@ -214,3 +214,30 @@ footer {
 footer p {
     margin: 0;
 }
+
+/* Content Wrapper for 2 Divs */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px; /* Pour ajouter de l'espace sous la barre de navigation */
+    padding: 20px;
+}
+
+.content-left, .content-right {
+    background-color: #333; /* Fond gris foncé */
+    color: #fff; /* Texte blanc */
+    padding: 20px;
+    width: 48%; /* Chaque div prend 48% de la largeur du parent pour permettre un espace entre les deux */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Légère ombre */
+}
+
+/* Adaptation pour écrans plus petits */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    .content-left, .content-right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
